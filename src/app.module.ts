@@ -7,6 +7,8 @@ import { User } from './users/users.model';
 import { RolesController } from './roles/roles.controller';
 import { RolesService } from './roles/roles.service';
 import { RolesModule } from './roles/roles.module';
+import { Role } from './roles/roles.model';
+import { UserRoles } from './roles/user-roles.model';
 
 @Module({
   imports: [
@@ -17,7 +19,7 @@ import { RolesModule } from './roles/roles.module';
       username: 'root',
       password: 'root',
       database: 'test',
-      models: [User],
+      models: [User, Role, UserRoles],
       autoLoadModels: true,
       synchronize: true,
     }),
