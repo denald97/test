@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { UsersModule } from './users/users.module';
 import { User } from './users/users.model';
+import { RolesController } from './roles/roles.controller';
+import { RolesService } from './roles/roles.service';
+import { RolesModule } from './roles/roles.module';
 
 @Module({
   imports: [
@@ -19,8 +22,9 @@ import { User } from './users/users.model';
       synchronize: true,
     }),
     UsersModule,
+    RolesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, RolesController],
+  providers: [AppService, RolesService],
 })
 export class AppModule {}
