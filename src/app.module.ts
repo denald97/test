@@ -26,7 +26,7 @@ import { UserRoles } from './roles/user-roles.model';
     UsersModule,
     RolesModule,
   ],
-  controllers: [AppController, RolesController],
-  providers: [AppService, RolesService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
